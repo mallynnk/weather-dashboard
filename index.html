@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Weather Dashboard</title>
+</head>
+
+<body class="flex-column min-100-vh">
+  
+  <header class="hero">
+    <h1 class="app-title"><i class="fab fa-github"></i> Weather Dashboard</h1>
+    <p class="currentDay" id="currentDay"></p>
+  </header>
+
+  <main class="container">
+    <div class="row">
+    <!-- <div class="row flex-row justify-space-between">
+        <div class="col-4">
+            <h3 class="city-header">search for a city </h3>
+            <input name="city" id="city" type="text" autofocus="true" class="form-input" />
+              <button type="submit" class="btn">Search City</button>
+         <div >CITY STUFF</div>     
+          </div>
+        </div>
+        <div class="col-8">
+          <p>City info here</p>
+        </div>
+      </div>   -->
+
+        <div class="searchbox col-4 col-lg-3 d-flex flex-column p-4 p-lg-3 m-5">
+            <div class="city-header"> 
+              <h3>Search for a city:</h3> 
+              <input class="search-bar" type="text" id="searchCity" value="City" />
+              <button class="btn" onclick="searchFunction()">Search!</button>
+            </div>
+            <!--append child history of previously searched cities-->
+            <h6>Previously Searched:<span id="previous-search"></span></h6>
+            <div id="history-container" class="list-group col-3">
+            </div>
+        </div>
+         <!--Container with city, date, and results-->
+        
+         <div class="p-4 p-lg-3 m-5 col-7">
+           <div class="large-box">
+            <h1>City:</h1>
+             <p>Temperature:</p>
+             <p>Humidity:</p>
+             <p>Wind Speed:</p>
+             <p>UV Index:</p>
+           </div>
+           <div class="m-0 row justify-space-between">
+             <h1 class="forecast">5-Day Forecast:</h1>
+            <div class="m-3 row">
+              <div class="col-12 col-md-6 col-xl-2 mb-3">
+                <div class="day">
+                  <h4 class="day1">
+                    Monday
+                  </h4>
+                  <ul id="list-toDo" class="card-body list-group list-group-flush">
+                  </ul>
+                </div>
+              </div>
+              <!-- tuesday -->
+              <div class="col-12 col-md-6 col-xl-2 mb-3">
+                <div class="day">
+                  <h4 class="day2">
+                    Tuesday
+                  </h4>
+                  <ul id="list-toDo" class="card-body list-group list-group-flush">
+                  </ul>
+                </div>
+              </div>
+              <!-- wednesday -->
+              <div class="col-12 col-md-6 col-xl-2 mb-3">
+                <div class="card">
+                  <h4 class="card-header">
+                   Wednesday
+                  </h4>
+                  <ul id="list-inProgress" class="list-group list-group-flush">
+                  </ul>
+                </div>
+              </div>
+              <!-- thursday -->
+              <div class="col-12 col-md-6 col-xl-2 mb-3">
+                <div class="card">
+                  <h4 class="card-header">
+                   Thursday
+                  </h4>
+                  <ul id="list-inReview" class="list-group list-group-flush">
+                  </ul>
+                </div>
+              </div>
+              <!-- friday -->
+              <div class="col-12 col-md-6 col-xl-2 mb-3">
+                <div class="card">
+                  <h4 class="card-header">
+                    Friday
+                  </h4>
+                  <ul id="list-done" class="list-group list-group-flush">
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+   </div>
+    
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

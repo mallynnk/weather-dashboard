@@ -21,70 +21,54 @@
 
   <main class="container">
     <div class="row">
-    <!-- <div class="row flex-row justify-space-between">
-        <div class="col-4">
-            <h3 class="city-header">search for a city </h3>
-            <input name="city" id="city" type="text" autofocus="true" class="form-input" />
-              <button type="submit" class="btn">Search City</button>
-         <div >CITY STUFF</div>     
-          </div>
-        </div>
-        <div class="col-8">
-          <p>City info here</p>
-        </div>
-      </div>   -->
-
+  
         <div class="searchbox col-4 col-lg-3 d-flex flex-column p-4 p-lg-3 m-5">
             <div class="city-header"> 
               <h3>Search for a city:</h3> 
-              <input class="search-bar" type="text" id="searchCity" value="City" />
-              <button class="btn" onclick="searchFunction()">Search!</button>
+              <input class="search-bar" type="text" id="searchCity" value="" />
+              <button class="btn saveBtn" id="searchBtn"> <i class="material-icons">search</i></button>
             </div>
             <!--append child history of previously searched cities-->
             <h6>Previously Searched:<span id="previous-search"></span></h6>
             <div id="history-container" class="list-group col-3">
+              <ul class="history" id="history"></ul>
             </div>
         </div>
          <!--Container with city, date, and results-->
         
          <div class="p-4 p-lg-3 m-5 col-7">
            <div class="large-box">
-            <h1>City:</h1>
-             <p>Temperature:</p>
-             <p>Humidity:</p>
-             <p>Wind Speed:</p>
-             <p>UV Index:</p>
+             <h2 id="cityName"></h2>
+             <h3 id="date"></h3>
+             <p id="temperature"></p>
+             <p id="humidity"></p>
+             <p id="windSpeed"></p>
+             <p id="uvIndex"></p>
            </div>
            <div class="m-0 row justify-space-between">
              <h1 class="forecast">5-Day Forecast:</h1>
             <div class="m-3 row">
               <div class="col-12 col-md-6 col-xl-2 mb-3">
                 <div class="day">
-                  <h4 class="day1">
-                    Monday
-                  </h4>
-                  <ul id="list-toDo" class="card-body list-group list-group-flush">
-                  </ul>
+                  <h4 id="day0"></h4>
+                  <div id="humidity0"></div>
+                  <div id="temperature0"></div>
                 </div>
               </div>
               <!-- tuesday -->
               <div class="col-12 col-md-6 col-xl-2 mb-3">
                 <div class="day">
-                  <h4 class="day2">
-                    Tuesday
-                  </h4>
-                  <ul id="list-toDo" class="card-body list-group list-group-flush">
-                  </ul>
+                  <h4 id="day1"></h4>
+                  <div id="humidity1"></div>
+                  <div id="temperature1"></div>
                 </div>
               </div>
               <!-- wednesday -->
               <div class="col-12 col-md-6 col-xl-2 mb-3">
                 <div class="card">
-                  <h4 class="card-header">
-                   Wednesday
-                  </h4>
-                  <ul id="list-inProgress" class="list-group list-group-flush">
-                  </ul>
+                  <h4 id="day2"></h4>
+                  <div id="humidity2"></div>
+                  <div id="temperature2"></div>
                 </div>
               </div>
               <!-- thursday -->

@@ -37,58 +37,64 @@
          <!--Container with city, date, and results-->
         
          <div class="hide forecast-box p-4 p-lg-3 m-5 col-7">
-           <div class="card">
-             <h2 class="card-header" id="cityName"></h2>
-             <h4 id="date"></h4>
+           <div class="card" id="icon">
+            
+            <div class="card-header">
+              <h2 id="cityName"></h2>
+              <h4 id="date"></h4>
+              <img id="todayIcon" src="" style="width: 100px">
+            </div>
              <p id="temperature"></p>
              <p id="humidity"></p>
              <p id="windSpeed"></p>
+           
              <div>  
                <span id="uviLabel"> </span>
                 <span id="uviValue"></span>
              </div>
            </div>
         
-           <div class="hide m-0 row justify-space-between forecast-container">
-             <h1 class="forecast"></h1>
-            <div class="m-3 row">
-              <div class="col-12 col-md-6 col-xl-3 mb-3">
-                <div class="day card text-white bg-primary mb-3" style="max-width: 18rem;">
+           <div class="hide row justify-space-between forecast-container">
+             <h1 class="hide forecast">5-day Forecast</h1>
+            <div class="card-deck text-center" style="color: grey;">
+              <!-- day1 -->
+              <div class="col card" style="margin: 2px; border: none">
+                <div class="day card-body forecast-card">
                   <h4 class="day-heading" id="day0"></h4>
-                  <div  class="card-text" id="humidity0"></div>
-                  <div  class="card-text" id="temperature0"></div>
+                  <div class="card-text" id="humidity0"></div>
+                  <div class="card-text" id="temperature0"></div>
                 </div>
               </div>
-              <!-- tuesday -->
-              <div class="col-12 col-md-6 col-xl-3 mb-3">
-                <div class="day card">
+              <!-- day2 -->
+              <div class="col card" style="margin: 2px; border: none">
+                <div class="day card-body forecast-card">
                   <h4 class="day-heading" id="day1"></h4>
-                  <div id="humidity1"></div>
-                  <div id="temperature1"></div>
+                  <div class="card-text" id="humidity1"></div>
+                  <div class="card-text" id="temperature1"></div>
                 </div>
               </div>
-              <!-- wednesday -->
-              <div class="col-12 col-md-6 col-xl-3 mb-3">
-                <div class="day card">
+              <!-- day3 -->
+              <div class="col card" style="margin: 2px; border: none">
+                <div class="day card-body forecast-card">
                   <h4 class="day-heading" id="day2"></h4>
-                  <div id="humidity2"></div>
-                  <div id="temperature2"></div>
+                  <div class="card-text" id="humidity2"></div>
+                  <div class="card-text" id="temperature2"></div>
                 </div>
               </div>
-              <!-- thursday -->
-              <div class="col-12 col-md-6 col-xl-3 mb-3">
-                <div class="day card">
+              <!-- day4 -->
+              <div class="col card" style="margin: 2px; border: none">
+                <div class="day card-body forecast-card">
                   <h4 class="day-heading" id="day3"></h4>
-                  <div id="humidity3"></div>
-                  <div id="temperature3"></div>
+                  <div class="card-text" id="humidity3"></div>
+                  <div class="card-text" id="temperature3"></div>
                 </div>
               </div>
-              <!-- friday -->
-              <div class="col-12 col-md-6 col-xl-3 mb-3">
-                <div class="day card">
+              <!-- day5 -->
+              <div class="col card" style="margin: 2px; border: none">
+                <div class="day card-body forecast-card">
                   <h4 class="day-heading" id="day4"></h4>
-                  <div id="humidity4"></div>
-                  <div id="temperature4"></div>
+                  <div class="card-text" id="humidity4"></div>
+                  <div class="card-text" id="temperature4"></div>
                   <!-- <ul id="list-done" class="list-group list-group-flush">
                   </ul> -->
                 </div>

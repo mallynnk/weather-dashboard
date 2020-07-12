@@ -20,7 +20,17 @@
     line-height: 1.5;
     font-size: 16px;
   }
-
+  .app-title {
+    font-size: 3rem;
+    background-color: var(--primary);
+    color: var(--tertiary);
+    border-radius: var(--border-radius);
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
   
   h1,
   h2,
@@ -28,7 +38,7 @@
   {
     font-weight: 700;
     margin: 0;
-    color: var(--dark);
+    color: var(--tertiary);
     line-height: 1.25;
   }
 
@@ -50,7 +60,7 @@
 
   .currentDay {
     text-align: center;
-    color: var(--dark);
+    color: var(--tertiary);
   }
 
   .search-bar {
@@ -68,9 +78,17 @@
     outline: none;
     transform: translate(-1px, -1px);
   }
+
+  .btn {
+    background-color: var(--tertiary)
+  }
   
-   .btn:hover, .searchPrevious:hover {
+ .searchPrevious:hover {
     color: var(--tertiary);
+    transform: translate(0, 0);
+  }
+  .btn:hover {
+    color: var(--primary);
     transform: translate(0, 0);
   }
   
@@ -83,23 +101,13 @@
     background-color: white; 
   }
   
-  .app-title {
-    font-size: 3rem;
-    background-color: var(--primary);
-    color: var(--dark);
-    border-radius: var(--border-radius);
-    height: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   
   /* CARDS */
-   .day {
-    margin: 0 0 20px 0;
-    /* border-radius: var(--border-radius); */
-    padding: 2.5%;
-    min-width: 100%
+  .day {
+  margin: 0 0 20px 0;
+  padding: 2.5%;
+  min-width: 100%;
+  
   }
 
  .card-title {
@@ -108,8 +116,21 @@
 
  .card-body {
    font-size: 1rem;
+   border: none;
+   padding: 5px;
  }
 
+ .forecast-card{
+  background-color: royalblue;
+  color: white;
+}
+.card-text {
+  font-size: .7rem;
+}
+
+.forecast-container {
+  padding-right: 25px;
+}
 /* UV INDEX COLORS */
   .red {
     background-color: red;

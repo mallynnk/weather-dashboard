@@ -61,9 +61,11 @@ var searchFunction = function(searchTerm) {
             if (weatherResponse.ok) {
                 //remove "hide" class to display forecast
                 var forecastContainer = document.querySelector(".forecast-container")
+                var forecastHeader = document.querySelector(".forecast")
                 var forecastBox = document.querySelector(".forecast-box")
                 forecastContainer.classList.remove("hide")
                 forecastBox.classList.remove("hide")
+                forecastHeader.classList.remove("hide")
                 
                 return weatherResponse.json().then(function(data) {
                     console.log(data);
@@ -85,14 +87,16 @@ var searchFunction = function(searchTerm) {
                    var windSpeedDisplay = document.querySelector("#windSpeed");
                 
                 
-                   cityNameDisplay.innerHTML = cityName; 
+                   cityNameDisplay.innerHTML = cityName;
                    dateOfWeatherDisplay.innerHTML = "("+ dateOfWeather + ")";
-                   temperatureDisplay.innerHTML = "Temperature: " + temperature;
+                   temperatureDisplay.innerHTML = "Temperature: " + temperature + " &#8457";
                    humidityDisplay.innerHTML = "Humidity:  " + humidity + " %";
                    windSpeedDisplay.innerHTML = "Windspeed:  " + windSpeed + " mph";
-
-                   var weatherIconAPI = "https://openweathermap.org/img/wn/" + data.weather.icon + "@2x.png";
-                   console.log(weatherIconAPI) 
+                   
+                var iconCode = data.weather[0].icon
+                var weatherIconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
+                console.log(weatherIconURL) 
+                $("#todayIcon").attr("src", weatherIconURL)
 
                    })
 
@@ -102,6 +106,8 @@ var searchFunction = function(searchTerm) {
         })
 }     
         
+
+
 // retrieve uvIndex and display        
 var fetchuvIndex = function(lat, lon) {   
     var apiUrlIndex = "https://api.openweathermap.org/data/2.5/uvi?appid=7e4c7478cc7ee1e11440bf55a8358ec3&lat=" + lat + "&lon=" + lon;
@@ -161,7 +167,7 @@ var forecastDisplay = function(forecastArr) {
         dayEl.innerHTML = dayName
         dayEl.classList.add("card-title")
         humidityEl.innerHTML = "Humidity: " + humidity + " %"
-        temperatureEl.innerHTML = "Temp: " + temperature
+        temperatureEl.innerHTML = "Temp: " + temperature + " &#8457"
     }
 }
 

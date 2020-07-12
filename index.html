@@ -36,59 +36,61 @@
         </div>
          <!--Container with city, date, and results-->
         
-         <div class="p-4 p-lg-3 m-5 col-7">
-           <div class="large-box">
-             <h2 id="cityName"></h2>
-             <h3 id="date"></h3>
+         <div class="hide forecast-box p-4 p-lg-3 m-5 col-7">
+           <div class="card">
+             <h2 class="card-header" id="cityName"></h2>
+             <h4 id="date"></h4>
              <p id="temperature"></p>
              <p id="humidity"></p>
              <p id="windSpeed"></p>
-             <p id="uvIndex"></p>
+             <div>  
+               <span id="uviLabel"> </span>
+                <span id="uviValue"></span>
+             </div>
            </div>
-           <div class="m-0 row justify-space-between">
-             <h1 class="forecast">5-Day Forecast:</h1>
+        
+           <div class="hide m-0 row justify-space-between forecast-container">
+             <h1 class="forecast"></h1>
             <div class="m-3 row">
-              <div class="col-12 col-md-6 col-xl-2 mb-3">
-                <div class="day">
-                  <h4 id="day0"></h4>
-                  <div id="humidity0"></div>
-                  <div id="temperature0"></div>
+              <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <div class="day card text-white bg-primary mb-3" style="max-width: 18rem;">
+                  <h4 class="day-heading" id="day0"></h4>
+                  <div  class="card-text" id="humidity0"></div>
+                  <div  class="card-text" id="temperature0"></div>
                 </div>
               </div>
               <!-- tuesday -->
-              <div class="col-12 col-md-6 col-xl-2 mb-3">
-                <div class="day">
-                  <h4 id="day1"></h4>
+              <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <div class="day card">
+                  <h4 class="day-heading" id="day1"></h4>
                   <div id="humidity1"></div>
                   <div id="temperature1"></div>
                 </div>
               </div>
               <!-- wednesday -->
-              <div class="col-12 col-md-6 col-xl-2 mb-3">
-                <div class="card">
-                  <h4 id="day2"></h4>
+              <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <div class="day card">
+                  <h4 class="day-heading" id="day2"></h4>
                   <div id="humidity2"></div>
                   <div id="temperature2"></div>
                 </div>
               </div>
               <!-- thursday -->
-              <div class="col-12 col-md-6 col-xl-2 mb-3">
-                <div class="card">
-                  <h4 class="card-header">
-                   Thursday
-                  </h4>
-                  <ul id="list-inReview" class="list-group list-group-flush">
-                  </ul>
+              <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <div class="day card">
+                  <h4 class="day-heading" id="day3"></h4>
+                  <div id="humidity3"></div>
+                  <div id="temperature3"></div>
                 </div>
               </div>
               <!-- friday -->
-              <div class="col-12 col-md-6 col-xl-2 mb-3">
-                <div class="card">
-                  <h4 class="card-header">
-                    Friday
-                  </h4>
-                  <ul id="list-done" class="list-group list-group-flush">
-                  </ul>
+              <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <div class="day card">
+                  <h4 class="day-heading" id="day4"></h4>
+                  <div id="humidity4"></div>
+                  <div id="temperature4"></div>
+                  <!-- <ul id="list-done" class="list-group list-group-flush">
+                  </ul> -->
                 </div>
               </div>
             </div>

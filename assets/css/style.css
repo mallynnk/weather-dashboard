@@ -21,22 +21,22 @@
     font-size: 16px;
   }
 
-  ul.list-group {
-    min-height: 130px;
-   
-  }
   
   h1,
   h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h3
+  {
     font-weight: 700;
     margin: 0;
     color: var(--dark);
     line-height: 1.25;
-    margin-bottom: 40px;
+  }
+
+  h4, h6  {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-left: 10px;
   }
   
   .forecast {
@@ -53,32 +53,24 @@
     color: var(--dark);
   }
 
-  /* .large-box, .searchbox {
-    border: 1px solid black;
-    padding: 50px
-  } */
-
   .search-bar {
     border: 1px solid black;
   }
   
-   .btn {
-    font-size: .7rem;
+   .btn, .searchPrevious {
+    font-size: 1rem;
     text-decoration:none;
-    padding: 6px 5px;
     display: block;
     margin: 5px 0;
     border-radius: var(--border-radius);
     color: var(--secondary);
     border: none;
     outline: none;
-    background-color: var(--light-dark);
     transform: translate(-1px, -1px);
   }
   
-   .btn:hover {
-    color: var(--primary);
-    background-color: var(--tertiary);
+   .btn:hover, .searchPrevious:hover {
+    color: var(--tertiary);
     transform: translate(0, 0);
   }
   
@@ -102,34 +94,44 @@
     justify-content: center;
   }
   
-  .list-group {
-    padding: 0;
-    list-style: none;
-  }
-  
-  
   /* CARDS */
-  .card {
+   .day {
     margin: 0 0 20px 0;
-    border: 1px solid var(--tertiary);
-    border-radius: var(--border-radius);
-  }
-
-
-  .card-header {
-    color: var(--primary);
-    font-size: 1rem;
-    background-color: var(--dark);
+    /* border-radius: var(--border-radius); */
     padding: 2.5%;
-    border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
-  }
-  
-  .card-body {
-    /* padding: 2.5%; */
     min-width: 100%
   }
-  
-  
+
+ .card-title {
+   font-weight: bold;
+ }
+
+ .card-body {
+   font-size: 1rem;
+ }
+
+/* UV INDEX COLORS */
+  .red {
+    background-color: red;
+  }
+
+  .green {
+    background-color: green;
+
+  }
+
+  .yellow {
+    background-color: yellow
+  }
+
+  .orange {
+    background-color: orange
+  }
+
+  .hide {
+    display: none
+  }
+
   /* HEIGHT / WIDTH UTILS */
   .min-100-vh {
     min-height: 100vh;
@@ -187,7 +189,7 @@
   .col-auto {
     flex-grow: 1;
   }
-  
+/*   
  
   @media screen and (min-width: 640px) {
     .col-sm-1 {
@@ -391,7 +393,7 @@
     .col-xl-12 {
       flex: 0 0 100%;
     }
-  }
+  } */
   
   
   

@@ -47,7 +47,7 @@ var searchFunction = function(searchTerm) {
 
     //if user doesn't enter information, cue alert
     if (!searchTerm) {
-        alert("Error: please enter a valid city")
+        alert("please enter a valid city")
         return
     }
     

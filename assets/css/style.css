@@ -149,19 +149,19 @@ h4, h6  {
 /* UV INDEX COLORS */
 
 .red {
-  background-color: red;
+  background-color: #F08080;
   padding: 10px;
 }
 .green {
-  background-color: green;
+  background-color: #9ab973;
   padding: 10px;
 }
 .yellow {
-  background-color: yellow;
+  background-color: #f4ca16
   padding: 10px;
 }
 .orange {
-  background-color: orange;
+  background-color: #fbab60;
   padding: 10px;
 }
 .hide {

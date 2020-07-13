@@ -20,26 +20,28 @@
   </header>
 
   <main class="container">
+    <!--search weather row -->
     <div class="row">
-  
         <div class="searchbox col-4 col-lg-3 d-flex flex-column p-4 p-lg-3 m-5">
-            <div class="city-header"> 
-              <h3>Search for a city:</h3> 
-              <input class="search-bar" type="text" id="searchCity" value="" />
-              <button class="btn saveBtn" id="searchBtn"> <i class="material-icons">search</i></button>
+            <div class="card text-left city-header"> 
+              <div class="card-header">
+                <strong>Search for a city:</strong>
+              </div> 
+              <div class="card-body">
+                <input class="search-bar form-control pull-left" type="text" id="searchCity" value="" />
+                <button class="btn btn-default saveBtn" id="searchBtn"> <i class="material-icons">search</i></button>
+              </div> 
             </div>
             <!--append child history of previously searched cities-->
-            <h6>Previously Searched:<span id="previous-search"></span></h6>
             <div id="history-container" class="list-group col-3">
               <ul class="history" id="history"></ul>
             </div>
         </div>
-         <!--Container with city, date, and results-->
-        
+        <!--Container with city, date, and results-->
          <div class="hide forecast-box p-4 p-lg-3 m-5 col-7">
-           <div class="card" id="icon">
+           <div class="card" id="icon" style="padding: 50px">
             
-            <div class="card-header">
+            <div class="card-title">
               <h2 id="cityName"></h2>
               <h4 id="date"></h4>
               <img id="todayIcon" src="" style="width: 100px">
@@ -47,7 +49,6 @@
              <p id="temperature"></p>
              <p id="humidity"></p>
              <p id="windSpeed"></p>
-           
              <div>  
                <span id="uviLabel"> </span>
                 <span id="uviValue"></span>
@@ -55,46 +56,51 @@
            </div>
         
            <div class="hide row justify-space-between forecast-container">
-             <h1 class="hide forecast">5-day Forecast</h1>
+             <h1 class="hide forecast">5-day Forecast:</h1>
             <div class="card-deck text-center" style="color: grey;">
               <!-- day1 -->
-              <div class="col card" style="margin: 2px; border: none">
+              <div class="col card" style="width: 50rem; height: 10rem; margin: 2px; border: none">
                 <div class="day card-body forecast-card">
                   <h4 class="day-heading" id="day0"></h4>
                   <div class="card-text" id="humidity0"></div>
                   <div class="card-text" id="temperature0"></div>
+                  <img id="img0" src="" style="width: 100px">
                 </div>
               </div>
               <!-- day2 -->
-              <div class="col card" style="margin: 2px; border: none">
+              <div class="col card" style="width: 50rem; height: 10rem; margin: 2px; border: none">
                 <div class="day card-body forecast-card">
                   <h4 class="day-heading" id="day1"></h4>
                   <div class="card-text" id="humidity1"></div>
                   <div class="card-text" id="temperature1"></div>
+                  <img id="img1" src="" style="width: 100px">
                 </div>
               </div>
               <!-- day3 -->
-              <div class="col card" style="margin: 2px; border: none">
+              <div class="col card" style="width: 50rem; height: 10rem; margin: 2px; border: none">
                 <div class="day card-body forecast-card">
                   <h4 class="day-heading" id="day2"></h4>
                   <div class="card-text" id="humidity2"></div>
                   <div class="card-text" id="temperature2"></div>
+                  <img id="img2" src="" style="width: 100px">
                 </div>
               </div>
               <!-- day4 -->
-              <div class="col card" style="margin: 2px; border: none">
+              <div class="col card" style="width: 50rem; height: 10rem; margin: 2px; border: none">
                 <div class="day card-body forecast-card">
                   <h4 class="day-heading" id="day3"></h4>
                   <div class="card-text" id="humidity3"></div>
                   <div class="card-text" id="temperature3"></div>
+                  <img id="img3" src="" style="width: 100px">
                 </div>
               </div>
               <!-- day5 -->
-              <div class="col card" style="margin: 2px; border: none">
+              <div class="col card" style="width: 50rem; height: 10rem; margin: 2px; border: none">
                 <div class="day card-body forecast-card">
                   <h4 class="day-heading" id="day4"></h4>
                   <div class="card-text" id="humidity4"></div>
                   <div class="card-text" id="temperature4"></div>
+                  <img id="img4" src="" style="width: 100px">
                   <!-- <ul id="list-done" class="list-group list-group-flush">
                   </ul> -->
                 </div>

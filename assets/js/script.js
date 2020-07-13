@@ -16,7 +16,7 @@ for (let index = 0; index < cities.length; index++) {
 function getSearchTerm () {
     event.preventDefault();
     //clear previous
-    clearInterval();     
+    clearInterval();    
     var searchTerm = document.querySelector("#searchCity").value
     cityList(searchTerm)
     searchFunction(searchTerm)
@@ -48,6 +48,11 @@ function cityList(searchTerm) {
 
 //search for cities
 var searchFunction = function(searchTerm) {
+    if (!searchTerm) {
+        alert("Error: please enter a valid city")
+        return
+    }
+    console.log("saving city")
     cities.push(searchTerm)
     saveCity()
 
@@ -91,13 +96,13 @@ var searchFunction = function(searchTerm) {
                    dateOfWeatherDisplay.innerHTML = "("+ dateOfWeather + ")";
                    temperatureDisplay.innerHTML = "Temperature: " + temperature + " &#8457";
                    humidityDisplay.innerHTML = "Humidity:  " + humidity + " %";
-                   windSpeedDisplay.innerHTML = "Windspeed:  " + windSpeed + " mph";
+                   windSpeedDisplay.innerHTML = "Wind Speed:  " + windSpeed + " mph";
                    
-                var iconCode = data.weather[0].icon
-                var weatherIconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
-                console.log(weatherIconURL) 
-                $("#todayIcon").attr("src", weatherIconURL)
-
+                   //get icon for current day & display on page
+                    var iconCode = data.weather[0].icon
+                    var weatherIconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
+                    console.log(weatherIconURL) 
+                    $("#todayIcon").attr("src", weatherIconURL)
                    })
 
                 } else {
@@ -136,8 +141,11 @@ var fetchuvIndex = function(lat, lon) {
     }) 
 }
 
+              
+
 var fetchForecast = function(searchTerm, dateOfWeather) {
     var apiUrlForecast = "https://api.openweathermap.org/data/2.5/forecast?&units=imperial&q=" + searchTerm + apiKey
+
     fetch(apiUrlForecast)
     .then(function(forecastResponse) {
         return forecastResponse.json().then(function(forecastData) {
@@ -160,14 +168,21 @@ var forecastDisplay = function(forecastArr) {
         const dayEl = document.getElementById("day" + index)
         const humidityEl = document.getElementById("humidity" + index)
         const temperatureEl = document.getElementById("temperature" + index)
+        const iconEl = document.getElementById("img" + index)
         console.log("#day" + index)
         var dayName = new Date(forecast.dt * 1000 ).toLocaleDateString('en-US', { date: 'numeric' })
         var humidity = forecast.main.humidity
         var temperature = forecast.main.temp
         dayEl.innerHTML = dayName
         dayEl.classList.add("card-title")
-        humidityEl.innerHTML = "Humidity: " + humidity + " %"
+        humidityEl.innerHTML = "Humidity: " + humidity + " %" 
         temperatureEl.innerHTML = "Temp: " + temperature + " &#8457"
+        //forecast icons
+        //get icon for current day & display on page
+        var iconCode = forecast.weather[0].icon
+        var weatherIconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
+        console.log(weatherIconURL) 
+        iconEl.setAttribute("src", weatherIconURL)
     }
 }
 

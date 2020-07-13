@@ -100,8 +100,8 @@ var searchFunction = function(searchTerm) {
             cityNameDisplay.innerHTML = cityName;
             dateOfWeatherDisplay.innerHTML = "("+ dateOfWeather + ")";
             temperatureDisplay.innerHTML = "Temperature: " + temperature + " &#8457";
-            humidityDisplay.innerHTML = "Humidity:  " + humidity + " %";
-            windSpeedDisplay.innerHTML = "Wind Speed:  " + windSpeed + " mph";
+            humidityDisplay.innerHTML = "Humidity: " + humidity + " %";
+            windSpeedDisplay.innerHTML = "Wind Speed: " + windSpeed + " mph";
             
             //get icon for current day and display on page
              var iconCode = data.weather[0].icon
@@ -172,12 +172,14 @@ var fetchForecast = function(searchTerm, dateOfWeather) {
             }
         //send data to forecastDisplay function
         forecastDisplay(forecastArr)
+        console.log(forecastArr)
         })
     })
 }    
 
 //display 5-day forecast on page
 var forecastDisplay = function(forecastArr) {
+    
     for (let index = 0; index < 5; index++) {
         //define the area of the html we want to put that data in
         const forecast = forecastArr[index];
@@ -200,6 +202,7 @@ var forecastDisplay = function(forecastArr) {
         var iconCode = forecast.weather[0].icon
         var weatherIconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
         iconEl.setAttribute("src", weatherIconURL)
+        
     }
 }
 

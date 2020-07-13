@@ -75,7 +75,7 @@ h4, h6  {
   text-decoration: none;
   display: block;
   margin: 5px 0;
-  width: auto;
+  width: 5000%;
   border-radius: var(--border-radius);
   color: var(--tertiary);
   border: none;
@@ -114,7 +114,8 @@ h4, h6  {
 
 .forecast {
   margin-top: 50px;
-  margin-bottom: 50px
+  margin-bottom: 50px;
+  text-align: center;
 }
 .currentDay {
   text-align: center;
@@ -134,6 +135,7 @@ h4, h6  {
   background-color: rgb(119,136,153);
   color: white;
   font-weight: strong;
+  border-radius: 5px;
 }
 .card-text {
   font-size: .7rem;

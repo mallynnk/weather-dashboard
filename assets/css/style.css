@@ -128,7 +128,12 @@ h4, h6  {
 .card-body {
    font-size: 1rem;
    border: gray solid 1px;
+   padding: 5px
  }
+
+.search-body {
+  padding: 20px
+}
 
 .forecast-card {
   background-color: rgb(119,136,153);

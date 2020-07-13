@@ -125,11 +125,6 @@ h4, h6  {
 
 /* CARDS */
 
-.card-body {
-   font-size: 1rem;
-   border: gray solid 1px;
-   padding: 5px
- }
 
 .search-body {
   padding: 20px
@@ -142,7 +137,7 @@ h4, h6  {
   border-radius: 5px;
 }
 .card-text {
-  font-size: .7rem;
+  font-size: 1rem;
   padding: 10px;
 }
 

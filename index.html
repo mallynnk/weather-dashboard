@@ -23,7 +23,7 @@
     <!--search weather row -->
     <div class="row">
         <div class="searchbox col-4 col-lg-3 d-flex flex-column p-4 p-lg-3 m-5">
-            <div class="card text-center w-100 city-header"> 
+            <div class="card text-center city-header"> 
               <div class="card-header">
                 <strong>Search for a city:</strong>
               </div> 
@@ -43,8 +43,8 @@
             </div>
         </div>
         <!--Container with city, date, and results-->
-         <div class="hide forecast-box p-4 p-lg-3 m-5 col-7">
-           <div class="card" id="icon" style="padding: 50px; text-align: center">
+         <div class="hide forecast-box m-4 col-7">
+           <div class="card current-box" id="icon" style="padding: 50px; text-align: center">
             
             <div class="card-title">
               <h2 id="cityName"></h2>
@@ -59,60 +59,62 @@
                 <span id="uviValue"></span>
              </div>
            </div>
-        
-           <div class="hide row justify-space-between forecast-container">
+           
+           
+           <div class="hide justify-space-between forecast-container">
              <h1 class="hide forecast">5-day Forecast:</h1>
             <div class="card-deck text-center">
               <!-- day1 -->
-              <div class="col card forecast-div mb-3">
+              <div class="card forecast-div mb-5">
                 <div class="day forecast-card">
                   <h4 class="day-heading" id="day0"></h4>
                   <div class="card-text" id="humidity0"></div>
                   <div class="card-text" id="temperature0"></div>
-                  <img id="img0" src="" style="width: 100px">
+                  <img id="img0" src="" style="width: 80px">
                 </div>
               </div>
               <!-- day2 -->
-              <div class="col card forecast-div  mb-3">
+              <div class="card forecast-div  mb-3">
                 <div class="day forecast-card">
                   <h4 class="day-heading" id="day1"></h4>
                   <div class="card-text" id="humidity1"></div>
                   <div class="card-text" id="temperature1"></div>
-                  <img id="img1" src="" style="width: 100px">
+                  <img id="img1" src="" style="width: 80px">
                 </div>
               </div>
               <!-- day3 -->
-              <div class="col card forecast-div mb-3">
+              <div class="card forecast-div mb-3">
                 <div class="day forecast-card">
                   <h4 class="day-heading" id="day2"></h4>
                   <div class="card-text" id="humidity2"></div>
                   <div class="card-text" id="temperature2"></div>
-                  <img id="img2" src="" style="width: 100px">
+                  <img id="img2" src="" style="width: 80px">
                 </div>
               </div>
               <!-- day4 -->
-              <div class="col card forecast-div  mb-3" >
+              <div class="card forecast-div  mb-3">
                 <div class="day forecast-card">
                   <h4 class="day-heading" id="day3"></h4>
                   <div class="card-text" id="humidity3"></div>
                   <div class="card-text" id="temperature3"></div>
-                  <img id="img3" src="" style="width: 100px">
+                  <img id="img3" src="" style="width: 80px">
                 </div>
               </div>
               <!-- day5 -->
-              <div class="col card forecast-div mb-3" >
+              <div class="card forecast-div mb-3">
                 <div class="day forecast-card">
                   <h4 class="day-heading" id="day4"></h4>
                   <div class="card-text" id="humidity4"></div>
                   <div class="card-text" id="temperature4"></div>
-                  <img id="img4" src="" style="width: 100px">
+                  <img id="img4" src="" style="width: 80px">
                   <!-- <ul id="list-done" class="list-group list-group-flush">
                   </ul> -->
                 </div>
               </div>
             </div>
         </div>
-   </div>
+
+  </div>
     
   </main>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

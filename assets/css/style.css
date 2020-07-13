@@ -62,12 +62,7 @@ h4, h6  {
   margin-left: 10px;
 }
 
-.forecast-div {
-  width: 60rem;
-  height: 10rem;
-  margin: 2px;
-  border: none;
-}
+
 
 /* SEARCH BAR & SEARCH HISTORY STYLES */
 
@@ -82,7 +77,6 @@ h4, h6  {
   text-decoration: none;
   display: block;
   margin: 5px 0;
-  width: 5000%;
   border-radius: var(--border-radius);
   color: var(--tertiary);
   border: none;
@@ -142,9 +136,16 @@ h4, h6  {
   color: white;
   font-weight: strong;
   border-radius: 5px;
+  width: 6.5rem;
 }
+
+.forecast-div {
+  width: 60rem;
+  border: none;
+}
+
 .card-text {
-  font-size: 1rem;
+  font-size: .8rem;
   padding: 10px;
 }
 
@@ -188,14 +189,37 @@ h4, h6  {
   min-width: 100vw;
 }
 
+
 /* FLEX STYLE */
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
 
   .col-lg-3 {
     flex: 0 0 calc(100% * 3 / 12 - 2%);
   }
-}
 
+  .forecast-card {
+    width: 25rem;
+  }
+
+  .card-deck {
+    flex-flow: column
+  }
+
+  .forecast-div {
+    width: 25rem;
+    align-items: center;
+  }
+
+  .city-header {
+    width: 25rem
+  }
+
+  .searchPrevious {
+    text-align: center;
+  }
+
+}
+ 
 
 @media screen and (max-width: 768px) {
 
@@ -210,31 +234,5 @@ h4, h6  {
     text-align: center;
     font-size: 10vw;
   }
-
-  .card-deck {
-    flex-direction: column 
-  }
-  .card {
-    flex-direction: column;
-    margin: 3;
-  }
-  
-  .forecast-card {
-    flex-direction: column;
-  }
-
-  .forecast-div {
-    height: 50rem;
-    width: 30rem;
-  }
 }
-  @media screen and (max-width: 500px) {
-    .forecast-div {
-      height: 50rem;
-      width: 25rem;
-      align-items: center;
-    }
-    
-  }
-  
-  
+ 

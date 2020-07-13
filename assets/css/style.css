@@ -151,18 +151,22 @@ h4, h6  {
 .red {
   background-color: #F08080;
   padding: 10px;
+  border-radius: 5px;
 }
 .green {
   background-color: #9ab973;
   padding: 10px;
+  border-radius: 5px;
 }
 .yellow {
-  background-color: #f4ca16
+  background-color: #f4ca16;
   padding: 10px;
+  border-radius: 5px;
 }
 .orange {
   background-color: #fbab60;
   padding: 10px;
+  border-radius: 5px;
 }
 .hide {
   display: none

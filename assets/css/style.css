@@ -150,15 +150,19 @@ h4, h6  {
 
 .red {
   background-color: red;
+  padding: 10px;
 }
 .green {
   background-color: green;
+  padding: 10px;
 }
 .yellow {
-  background-color: yellow
+  background-color: yellow;
+  padding: 10px;
 }
 .orange {
-  background-color: orange
+  background-color: orange;
+  padding: 10px;
 }
 .hide {
   display: none

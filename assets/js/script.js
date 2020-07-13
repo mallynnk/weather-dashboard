@@ -9,113 +9,122 @@ $("#currentDay").text(now)
 
 //load local storage on main page
 for (let index = 0; index < cities.length; index++) {
-    cityList(cities[index])
+    addCityHistory(cities[index])
 }
 
-
+//get search term from input 
 function getSearchTerm () {
     event.preventDefault();
     //clear previous
     clearInterval();    
-    var searchTerm = document.querySelector("#searchCity").value
-    cityList(searchTerm)
-    searchFunction(searchTerm)
+    var searchEl = document.querySelector("#searchCity")
+    searchFunction(searchEl.value)
+    searchEl.value = ""
 }
 
-//save cities to local storage
+//save search term to local storage
 var saveCity = function () {
     localStorage.setItem("cities", JSON.stringify(cities));
-    event.preventDefault();
 }
 
-//create city list and display on page
-function cityList(searchTerm) {
+//display search history on page
+function addCityHistory(searchTerm) {
+    //create button element
     var listItems = document.createElement("button");
     listItems.setAttribute("class", "searchPrevious")
     listItems.addEventListener("click", function(){
         var searchTool = $(this)[0].innerHTML;
         searchFunction(searchTool)
     })
-    //i don't understand this
     var searchTermText = searchTerm;
     listItems.textContent = searchTermText;
     var historyList = document.querySelector(".history");
     historyList.appendChild(listItems)
-    //call searchFunction here
 }
 
-
-
-//search for cities
+//search for city
 var searchFunction = function(searchTerm) {
+
+    //if user doesn't enter information, cue alert
     if (!searchTerm) {
         alert("Error: please enter a valid city")
         return
     }
-    console.log("saving city")
-    cities.push(searchTerm)
-    saveCity()
-
-    // format the github api url
+    
+    // format the api url
     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=imperial&q=" + searchTerm + apiKey
 
-    // get weather dashboard for current day    
-        fetch(apiUrl)
-        .then(function(weatherResponse) {
-            //ensure the user enters a city
-            if (weatherResponse.ok) {
-                //remove "hide" class to display forecast
-                var forecastContainer = document.querySelector(".forecast-container")
-                var forecastHeader = document.querySelector(".forecast")
-                var forecastBox = document.querySelector(".forecast-box")
-                forecastContainer.classList.remove("hide")
-                forecastBox.classList.remove("hide")
-                forecastHeader.classList.remove("hide")
-                
-                return weatherResponse.json().then(function(data) {
-                    console.log(data);
-                 const cityName = data.name;
-                 const temperature = data.main.temp
-                 var dateOfWeather = getLocalDate(data.dt)
-                 const windSpeed = data.wind.speed
-                 const humidity = data.main.humidity
-                 var lat = data.coord.lat
-                 var lon = data.coord.lon
-                 fetchuvIndex(lat, lon)
-                 fetchForecast(searchTerm, dateOfWeather)
-                
-                   //grab the area of the html we want to put that data in
-                   var cityNameDisplay = document.querySelector("#cityName");
-                   var dateOfWeatherDisplay = document.querySelector("#date");
-                   var temperatureDisplay = document.querySelector("#temperature")
-                   var humidityDisplay = document.querySelector("#humidity");
-                   var windSpeedDisplay = document.querySelector("#windSpeed");
-                
-                
-                   cityNameDisplay.innerHTML = cityName;
-                   dateOfWeatherDisplay.innerHTML = "("+ dateOfWeather + ")";
-                   temperatureDisplay.innerHTML = "Temperature: " + temperature + " &#8457";
-                   humidityDisplay.innerHTML = "Humidity:  " + humidity + " %";
-                   windSpeedDisplay.innerHTML = "Wind Speed:  " + windSpeed + " mph";
-                   
-                   //get icon for current day & display on page
-                    var iconCode = data.weather[0].icon
-                    var weatherIconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
-                    console.log(weatherIconURL) 
-                    $("#todayIcon").attr("src", weatherIconURL)
-                   })
+    // get weather dashboard for the current day    
+    fetch(apiUrl)
+    .then(function(weatherResponse) {
 
-                } else {
-                    alert("Error: " + weatherResponse.statusText)
-                }      
-        })
+        //ensure the user enters a city
+        if (weatherResponse.ok) {
+            cities.push(searchTerm)
+            saveCity()
+            addCityHistory(searchTerm)
+
+            //remove "hide" classes to display forecasts
+            var forecastContainer = document.querySelector(".forecast-container")
+            var forecastHeader = document.querySelector(".forecast")
+            var forecastBox = document.querySelector(".forecast-box")
+            forecastContainer.classList.remove("hide")
+            forecastBox.classList.remove("hide")
+            forecastHeader.classList.remove("hide")
+            
+            //return forecast data data 
+            return weatherResponse.json().then(function(data) {
+                console.log(data);
+
+            //store current forecast data in variables
+             const cityName = data.name;
+             const temperature = data.main.temp
+             var dateOfWeather = getLocalDate(data.dt)
+             const windSpeed = data.wind.speed
+             const humidity = data.main.humidity
+
+             //store variables for latitude and longitude to send to uvIndex function
+             var lat = data.coord.lat
+             var lon = data.coord.lon
+             fetchuvIndex(lat, lon)
+             fetchForecast(searchTerm, dateOfWeather)
+            
+            //define the area of the html we want to put that data in
+            var cityNameDisplay = document.querySelector("#cityName");
+            var dateOfWeatherDisplay = document.querySelector("#date");
+            var temperatureDisplay = document.querySelector("#temperature")
+            var humidityDisplay = document.querySelector("#humidity");
+            var windSpeedDisplay = document.querySelector("#windSpeed");
+            
+            //display data on page
+            cityNameDisplay.innerHTML = cityName;
+            dateOfWeatherDisplay.innerHTML = "("+ dateOfWeather + ")";
+            temperatureDisplay.innerHTML = "Temperature: " + temperature + " &#8457";
+            humidityDisplay.innerHTML = "Humidity:  " + humidity + " %";
+            windSpeedDisplay.innerHTML = "Wind Speed:  " + windSpeed + " mph";
+            
+            //get icon for current day and display on page
+             var iconCode = data.weather[0].icon
+             var weatherIconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
+             console.log(weatherIconURL) 
+             $("#todayIcon").attr("src", weatherIconURL)
+            })
+
+         //if user doesn't enter a correct city, return error message   
+        } else {
+            alert("Error: " + weatherResponse.statusText)
+        }      
+    })
 }     
         
 
 
-// retrieve uvIndex and display        
+// retrieve uvIndex and display on page       
 var fetchuvIndex = function(lat, lon) {   
+
+    //define uvi api
     var apiUrlIndex = "https://api.openweathermap.org/data/2.5/uvi?appid=7e4c7478cc7ee1e11440bf55a8358ec3&lat=" + lat + "&lon=" + lon;
+
     //fetch uviIndex
     fetch(apiUrlIndex)
     .then(function(uviResponse) {
@@ -127,7 +136,8 @@ var fetchuvIndex = function(lat, lon) {
         var uviValue = document.querySelector("#uviValue")
         uviValue.innerHTML = uvIndex
         uviValue.classList.remove("green", "yellow", "orange", "red")
-        console.log(uvIndex)
+
+        //set a uvi color scale to display on page
             if (uvIndex <= 3) { 
                 uviValue.classList.add("green")
             } else if (uvIndex >= 3 && uvIndex <= 6) {
@@ -142,14 +152,17 @@ var fetchuvIndex = function(lat, lon) {
 }
 
               
-
+//retrieve information for 5-day forecast
 var fetchForecast = function(searchTerm, dateOfWeather) {
+
+    //api for 5-day forecast
     var apiUrlForecast = "https://api.openweathermap.org/data/2.5/forecast?&units=imperial&q=" + searchTerm + apiKey
 
+    //fetch 5-day forecast data
     fetch(apiUrlForecast)
     .then(function(forecastResponse) {
         return forecastResponse.json().then(function(forecastData) {
-            console.log(forecastData);
+           //set forecast array and for loop to retrieve data
             var forecastArr = []
             for (let index = 1; index < 6; index++) {
                 const date = addDays(dateOfWeather, index).toLocaleDateString();
@@ -157,19 +170,22 @@ var fetchForecast = function(searchTerm, dateOfWeather) {
                 forecastArr.push(forecast)
                 console.log(forecast)
             }
+        //send data to forecastDisplay function
         forecastDisplay(forecastArr)
         })
     })
 }    
 
+//display 5-day forecast on page
 var forecastDisplay = function(forecastArr) {
     for (let index = 0; index < 5; index++) {
+        //define the area of the html we want to put that data in
         const forecast = forecastArr[index];
         const dayEl = document.getElementById("day" + index)
         const humidityEl = document.getElementById("humidity" + index)
         const temperatureEl = document.getElementById("temperature" + index)
-        const iconEl = document.getElementById("img" + index)
-        console.log("#day" + index)
+        
+        //display the data on the page
         var dayName = new Date(forecast.dt * 1000 ).toLocaleDateString('en-US', { date: 'numeric' })
         var humidity = forecast.main.humidity
         var temperature = forecast.main.temp
@@ -177,11 +193,12 @@ var forecastDisplay = function(forecastArr) {
         dayEl.classList.add("card-title")
         humidityEl.innerHTML = "Humidity: " + humidity + " %" 
         temperatureEl.innerHTML = "Temp: " + temperature + " &#8457"
-        //forecast icons
+        
+        //icon element
+        const iconEl = document.getElementById("img" + index)
         //get icon for current day & display on page
         var iconCode = forecast.weather[0].icon
         var weatherIconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
-        console.log(weatherIconURL) 
         iconEl.setAttribute("src", weatherIconURL)
     }
 }

@@ -70,7 +70,18 @@ h4, h6  {
 .list-group {
   margin-top: 20px;
 }
-
+.searchPrevious {
+  font-size: 1rem;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  width: auto;
+  border-radius: var(--border-radius);
+  color: var(--tertiary);
+  border: none;
+  outline: none;
+  transform: translate(-1px, -1px);
+}
 .btn {
   font-size: 1rem;
   text-decoration: none;
@@ -86,29 +97,17 @@ h4, h6  {
 .btn {
   background-color: var(--tertiary)
 }
-.searchPrevious {
-  font-size: 1.5rem;
-  text-decoration: none;
-  display: block;
-  margin: 5px 0;
-  width: auto;
-  border-radius: var(--border-radius);
-  color: var(--tertiary);
-  border: none;
-  outline: none;
-  transform: translate(-1px, -1px);
-}
 
 .searchPrevious:hover {
-   color: black;
-   transform: translate(0, 0);
- }
-.btn:hover {
-  color: var(--primary);
+  color: black;
   transform: translate(0, 0);
 }
+.btn:hover {
+ color: var(--primary);
+ transform: translate(0, 0);
+}
 .btn-inline {
-  display: inline;
+ display: inline;
 }
 
 /* DAILY FORECAST STYLES */

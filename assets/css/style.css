@@ -138,7 +138,7 @@ h4, h6  {
   color: white;
   font-weight: strong;
   border-radius: 5px;
-  width: 6.5rem;
+  width: 6.8rem;
   height: 15rem;
 }
 
@@ -222,7 +222,7 @@ h4, h6  {
 
 }
  
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
 
   header {
     padding: 0;
@@ -235,5 +235,84 @@ h4, h6  {
     text-align: center;
     font-size: 10vw;
   }
-}
+  .app-title {
+     width: 100%;
+     padding: 5px;
+     text-align: center;
+     font-size: 1.5rem;
+   }
  
+   .currentDay {
+     font-size: 1rem
+   }
+ 
+   .current-box {
+     width: 30rem
+   }
+ 
+   .forecast-card {
+     width: 20rem;
+   }
+ 
+   .card-deck {
+     flex-flow: column
+   }
+ 
+   .forecast-div {
+     width: 30rem;
+     align-items: center;
+   }
+ 
+   .city-header {
+     width: 24rem
+   }
+ 
+   .searchPrevious {
+     text-align: center;
+     width: 19rem
+   }
+ 
+ }
+ 
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 400px) {
+  
+ .app-title {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .currentDay {
+    font-size: 1rem
+  }
+
+  .current-box {
+    width: 21rem;
+    border: none
+  }
+
+  .forecast-card {
+    width: 20rem;
+  }
+
+  .card-deck {
+    flex-flow: column
+  }
+
+  .forecast-div {
+    width: 20rem;
+    align-items: center;
+  }
+
+  .city-header {
+    width: 15rem
+  }
+
+  .searchPrevious {
+    text-align: center;
+    width: 10rem
+  }
+
+}

@@ -275,7 +275,7 @@ h4, h6  {
  }
  
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   
  .app-title {
     width: 100%;
@@ -283,18 +283,24 @@ h4, h6  {
     text-align: center;
     font-size: 1.5rem;
   }
-
+  
+  .row {
+    margin-left: 20px
+  }
+  .hero {
+    width: 40rem;
+  }
   .currentDay {
     font-size: 1rem
   }
 
   .current-box {
-    width: 21rem;
     border: none
   }
 
   .forecast-card {
     width: 20rem;
+    margin-left: 200px;
   }
 
   .card-deck {
@@ -307,12 +313,12 @@ h4, h6  {
   }
 
   .city-header {
-    width: 15rem
+    border: none;
+    padding: 0
   }
 
   .searchPrevious {
     text-align: center;
-    width: 10rem
   }
 
 }

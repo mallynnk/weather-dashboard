@@ -1,324 +1,246 @@
 :root {
-    --primary: white;
-    --secondary: #338167;
-    --tertiary: #C88289;
-    --light-dark: #C1B4BF;
-    --dark: #55879E;
-    --border-radius: .3rem;
-  }
-  
-* {
-  box-sizing: border-box;
+  --primary: white;
+  --secondary: #338167;
+  --tertiary: #C88289;
+  --light-dark: #C1B4BF;
+  --dark: #55879E;
+  --border-radius: .3rem;
 }
-  
+
+* {
+box-sizing: border-box;
+}
+
 body {
-  background-color: var(--primary);
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  color: black;
-  line-height: 1.5;
-  font-size: 16px;
-  width: 100%
+background-color: var(--primary);
+margin: 0;
+padding: 0;
+font-family: 'Roboto', sans-serif;
+color: black;
+line-height: 1.5;
+font-size: 16px;
+width: 100%
 }
 
 /* HEADER STYLES */
+.container {
+margin-top: 50px
 
+}
 .hero {
-  padding: 3% 4%;
-  background-color: white; 
-  background-image: url("../images/background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-position: 80%;
-  z-index: 9999;
+padding: 3% 4%;
+background-color: white; 
+background-image: url("../images/background.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-position: 80%;
+z-index: 9999;
+align-items: center
 }
 
 .app-title {
-  font-size: 3rem;
-  color: var(--primary);
-  border-radius: var(--border-radius);
-  height: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+font-size: 3rem;
+color: var(--primary);
+border-radius: var(--border-radius);
+height: 2em;
+align-items: center;
+justify-content: center;
 }
 
 h1,
 h2,
 h3
 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0;
-  color: var(--tertiary);
-  line-height: 1.25;
+font-size: 2rem;
+font-weight: 700;
+margin: 0;
+color: var(--tertiary);
+
 }
 h4, h6  {
-  font-weight: bold;
-  font-size: 1rem;
-  margin-top: 20px;
-  margin-left: 10px;
+font-weight: bold;
+font-size: 1rem;
+margin-top: 20px;
+margin-left: 10px;
 }
 
 /* SEARCH BAR & SEARCH HISTORY STYLES */
 
 .search-bar {
-  border: 1px solid gray;
+border: 1px solid gray;
+width: 100%
 }
 .list-group {
-  margin-top: 20px;
+margin-top: 20px;
 }
 .searchPrevious {
-  font-size: 1rem;
-  text-decoration: none;
-  display: block;
-  margin: 5px 0;
-  border-radius: var(--border-radius);
-  color: var(--tertiary);
-  border: none;
-  outline: none;
-  transform: translate(-1px, -1px);
+font-size: 1rem;
+text-decoration: none;
+display: block;
+margin: 5px 0;
+border-radius: var(--border-radius);
+color: var(--tertiary);
+border: none;
+outline: none;
+transform: translate(-1px, -1px);
+width: 100%
 }
 .btn {
-  font-size: 1rem;
-  text-decoration: none;
-  display: block;
-  margin: 5px 0;
-  width: 100%;
-  border-radius: var(--border-radius);
-  color: var(--primary);
-  border: none;
-  outline: none;
-  transform: translate(-1px, -1px);
+font-size: 1rem;
+text-decoration: none;
+display: block;
+margin: 5px 0;
+width: 100%;
+border-radius: var(--border-radius);
+color: var(--primary);
+border: none;
+outline: none;
+transform: translate(-1px, -1px);
 }
 .btn {
-  background-color: var(--tertiary)
+background-color: var(--tertiary)
 }
 
 .searchPrevious:hover {
-  color: black;
-  transform: translate(0, 0);
+color: black;
+transform: translate(0, 0);
 }
 .btn:hover {
- color: var(--primary);
- transform: translate(0, 0);
+color: var(--primary);
+transform: translate(0, 0);
 }
 .btn-inline {
- display: inline;
+display: inline;
 }
 
 /* DAILY FORECAST STYLES */
 
 .forecast {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;
+margin-top: 50px;
+margin-bottom: 50px;
+text-align: center;
 }
 .currentDay {
-  text-align: center;
-  color: var(--primary);
-  font-size: 1.5rem;
+text-align: center;
+color: var(--primary);
+font-size: 1.5rem;
+}
+
+.current-box {
+line-height: 2.7rem;
+border: 1px solid gray;
 }
 
 /* CARDS */
 
 .card-text {
-  font-size: .8rem;
-  padding: 10px;
+font-size: .8rem;
+padding: 10px;
+text-align: center
 }
 
 .search-body {
-  padding: 20px
+padding: 20px
 }
 
 .forecast-card {
-  background-color: rgb(119,136,153);
-  color: white;
-  font-weight: strong;
-  border-radius: 5px;
-  width: 6.8rem;
-  height: 15rem;
-}
-
-.forecast-div {
-  width: 60rem;
-  border: none;
+background-color: rgb(119,136,153);
+color: white;
+font-weight: strong;
+border-radius: 5px;
 }
 
 .forecast-container {
-  padding-right: 25px;
-}
-
-.forecast-box {
-  margin-top: 4.1rem;
+margin-top: 100px
 }
 
 /* UV INDEX COLORS */
 
 .red {
-  background-color: #F08080;
-  padding: 10px;
-  border-radius: 5px;
+background-color: #F08080;
+padding: 10px;
+border-radius: 5px;
 }
 .green {
-  background-color: #9ab973;
-  padding: 10px;
-  border-radius: 5px;
+background-color: #9ab973;
+padding: 10px;
+border-radius: 5px;
 }
 .yellow {
-  background-color: #f4ca16;
-  padding: 10px;
-  border-radius: 5px;
+background-color: #f4ca16;
+padding: 10px;
+border-radius: 5px;
 }
 .orange {
-  background-color: #fbab60;
-  padding: 10px;
-  border-radius: 5px;
+background-color: #fbab60;
+padding: 10px;
+border-radius: 5px;
 }
 .hide {
-  display: none
+display: none
 }
 
 /* HEIGHT / WIDTH STYLES */
 
 .min-100-vh {
-  min-height: 100vh;
+min-height: 100vh;
 }
 
 .min-100-vw {
-  min-width: 100vw;
+min-width: 100vw;
 }
 
 
-/* MEDIA QUERIES */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 765px) {
 
-  .col-lg-3 {
-    flex: 0 0 calc(100% * 3 / 12 - 2%);
-  }
-
-  .forecast-card {
-    width: 25rem;
-  }
-
-  .card-deck {
-    flex-flow: column
-  }
-
-  .forecast-div {
-    width: 25rem;
-    align-items: center;
-  }
-
-  .city-header {
-    width: 25rem
-  }
-
-  .searchPrevious {
-    text-align: center;
-  }
-
+header {
+  padding: 0;
+  justify-content: center;
+  position: relative;
 }
- 
-@media screen and (max-width: 850px) {
+header h1 {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  font-size: 10vw;
+}
+.app-title {
+   width: 100%;
+   padding: 5px;
+   text-align: center;
+   font-size: 1.5rem;
+ }
 
-  header {
-    padding: 0;
-    justify-content: center;
-    position: relative;
-  }
-  header h1 {
-    width: 100%;
-    padding: 5px;
-    text-align: center;
-    font-size: 10vw;
-  }
-  .app-title {
-     width: 100%;
-     padding: 5px;
-     text-align: center;
-     font-size: 1.5rem;
-   }
- 
-   .currentDay {
-     font-size: 1rem
-   }
- 
-   .current-box {
-     width: 30rem
-   }
- 
-   .forecast-card {
-     width: 20rem;
-   }
- 
-   .card-deck {
-     flex-flow: column
-   }
- 
-   .forecast-div {
-     width: 30rem;
-     align-items: center;
-   }
- 
-   .city-header {
-     width: 24rem
-   }
- 
-   .searchPrevious {
-     text-align: center;
-     width: 19rem
-   }
- 
+ .currentDay {
+   font-size: 1rem
+ }
+
+ .forecast-container {
+   margin-top: auto
+ }
+
+ .hide {
+   display: list-item;
+ }
+
+ .forecast-div {
+   text-align: center;
  }
  
-/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
-@media screen and (max-width: 600px) {
-  
- .app-title {
-    width: 100%;
-    padding: 5px;
-    text-align: center;
-    font-size: 1.5rem;
-  }
-  
-  .row {
-    margin-left: 20px
-  }
-  .hero {
-    width: 40rem;
-  }
-  .currentDay {
-    font-size: 1rem
-  }
-
-  .current-box {
-    border: none
-  }
-
-  .forecast-card {
-    width: 20rem;
-    margin-left: 200px;
-  }
-
-  .card-deck {
-    flex-flow: column
-  }
-
-  .forecast-div {
-    width: 20rem;
-    align-items: center;
-  }
-
-  .city-header {
-    border: none;
-    padding: 0
-  }
-
-  .searchPrevious {
-    text-align: center;
-  }
-
+ .forecast-card {
+   padding: 10px
+ }
 }
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 570px) {
+
+.app-title {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+} 

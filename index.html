@@ -5,31 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Weather Dashboard</title>
 </head>
 
-<body class="flex-column min-100-vh">
+<body class="">
   
   <header class="hero">
     <h1 class="app-title"><i class="fab fa-github"></i> Weather Dashboard</h1>
-    <p class="currentDay" id="currentDay"></p>
+    <h2 class="currentDay subtitle" id="currentDay"></h2>
   </header>
 
-  <main class="container">
+  <main class="container is-fluid is-variable is-2-mobile is-0-tablet is-3-desktop is-8-widescreen is-1-fullhd">
     <!--search weather row -->
-    <div class="row">
-        <div class="searchbox col-4 col-lg-3 d-flex flex-column p-4 p-lg-3 m-5">
-            <div class="card text-center city-header"> 
+    <div class="columns ">
+        <div class="searchbox column is-one-quarter">
+            <div class="text-center city-header"> 
               <div class="card-header">
-                <strong>Search for a city:</strong>
+                <h4>Search for a city:</h3>
               </div> 
-              <div class="card-body search-body">
+              <div class="search-body">
                 <input class="search-bar form-control pull-left" type="text" id="searchCity" value="" />
-                <button class="btn btn-default saveBtn" id="searchBtn">
+                <button class="btn button is-small saveBtn" id="searchBtn">
                   <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
                   <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
@@ -38,13 +39,14 @@
               </div> 
             </div>
             <!--append child history of previously searched cities-->
-            <div id="history-container" class="list-group col-3">
+            <div id="history-container"  class="list-group">
               <ul class="history" id="history"></ul>
             </div>
         </div>
         <!--Container with city, date, and results-->
-         <div class="hide forecast-box col-7">
-           <div class="card current-box" id="icon" style="padding: 50px; text-align: center">
+       <div class="column is-three-fifths hide forecast-container">
+         <div class="forecast-box">
+           <div class="current-box" id="icon" style="padding: 50px; text-align: center">
             
             <div class="card-title">
               <h2 id="cityName"></h2>
@@ -59,13 +61,11 @@
                 <span id="uviValue"></span>
              </div>
            </div>
-           
-           
-           <div class="hide justify-space-between forecast-container">
-             <h1 class="hide forecast">5-day Forecast:</h1>
-            <div class="card-deck text-center">
+          </div>
+          <h1 class="column is-full hide forecast">5-day Forecast:</h1>
+           <div class="columns hide tile is-parent is-horizontal forecast-container">
               <!-- day1 -->
-              <div class="card forecast-div mb-5">
+              <div class="tile column is-child forecast-div ">
                 <div class="day forecast-card">
                   <h4 class="day-heading" id="day0"></h4>
                   <div class="card-text" id="humidity0"></div>
@@ -74,7 +74,7 @@
                 </div>
               </div>
               <!-- day2 -->
-              <div class="card forecast-div  mb-3">
+              <div class="tile column is-child forecast-div flex-box">
                 <div class="day forecast-card">
                   <h4 class="day-heading" id="day1"></h4>
                   <div class="card-text" id="humidity1"></div>
@@ -83,7 +83,7 @@
                 </div>
               </div>
               <!-- day3 -->
-              <div class="card forecast-div mb-3">
+              <div class="column tile is-child forecast-div">
                 <div class="day forecast-card">
                   <h4 class="day-heading" id="day2"></h4>
                   <div class="card-text" id="humidity2"></div>
@@ -92,7 +92,7 @@
                 </div>
               </div>
               <!-- day4 -->
-              <div class="card forecast-div mb-3">
+              <div class= "tile column is-child forecast-div">
                 <div class="day forecast-card">
                   <h4 class="day-heading" id="day3"></h4>
                   <div class="card-text" id="humidity3"></div>
@@ -101,7 +101,7 @@
                 </div>
               </div>
               <!-- day5 -->
-              <div class="card forecast-div mb-3">
+              <div class="tile column is-child forecast-div">
                 <div class="day forecast-card">
                   <h4 class="day-heading" id="day4"></h4>
                   <div class="card-text" id="humidity4"></div>
@@ -111,14 +111,11 @@
                   </ul> -->
                 </div>
               </div>
-            </div>
         </div>
-
-  </div>
-    
   </main>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
   <script src="./assets/js/script.js"></script>
 </body>
 

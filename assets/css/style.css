@@ -149,10 +149,15 @@ background-color: rgb(119,136,153);
 color: white;
 font-weight: strong;
 border-radius: 5px;
+padding: 1vw;
 }
 
 .forecast-container {
 margin-top: 100px
+}
+
+.day-heading {
+  text-align: center
 }
 
 /* UV INDEX COLORS */
